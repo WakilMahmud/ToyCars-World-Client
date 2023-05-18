@@ -33,7 +33,7 @@ const Login = () => {
 	};
 
 	const handleGoogleLogin = () => {
-		console.log("Clicked Google");
+		// console.log("Clicked Google");
 		googleLogin()
 			.then((result) => {
 				// The signed-in user info.
