@@ -2,6 +2,8 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import ShopCategory from "../ShopCategory/ShopCategory";
+import ToyCarAccessoriesSection from "../ToyCarAccessoriesSection/ToyCarAccessoriesSection";
+import ToyCarRacingEventsSection from "../ToyCarRacingEvent/ToyCarRacingEventsSection";
 
 const Home = () => {
 	return (
@@ -10,8 +12,8 @@ const Home = () => {
 			<Banner></Banner>
 			<Gallery></Gallery>
 			<ShopCategory></ShopCategory>
-			<div className="">Extra Section - 1</div>
-			<div className="">Extra Section - 2</div>
+			<ToyCarAccessoriesSection></ToyCarAccessoriesSection>
+			<ToyCarRacingEventsSection></ToyCarRacingEventsSection>
 		</>
 	);
 };
