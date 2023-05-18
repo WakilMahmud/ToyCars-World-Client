@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+	const [show, setShow] = useState(false);
 	const { user, logOut } = useContext(AuthContext);
 
 	const handleLogout = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="navbar  bg-red-400">
+		<div className="navbar sticky top-0 z-10 bg-white">
 			{/* Responsive Navbar */}
 			<div className="flex-1 md:hidden">
 				<div className="dropdown">
@@ -28,12 +29,16 @@ const Navbar = () => {
 						<li>
 							<Link to="/allToys">All Toys</Link>
 						</li>
-						<li>
-							<Link to="/myToys">My Toys</Link>
-						</li>
-						<li>
-							<Link to="/addAToy">Add A Toy</Link>
-						</li>
+						{user && (
+							<>
+								<li>
+									<Link to="/myToys">My Toys</Link>
+								</li>
+								<li>
+									<Link to="/addAToy">Add A Toy</Link>
+								</li>
+							</>
+						)}
 						<li>
 							<Link to="/blogs">Blogs</Link>
 						</li>
@@ -72,12 +77,16 @@ const Navbar = () => {
 						<li>
 							<Link to="/allToys">All Toys</Link>
 						</li>
-						<li>
-							<Link to="/myToys">My Toys</Link>
-						</li>
-						<li>
-							<Link to="/addAToy">Add A Toy</Link>
-						</li>
+						{user && (
+							<>
+								<li>
+									<Link to="/myToys">My Toys</Link>
+								</li>
+								<li>
+									<Link to="/addAToy">Add A Toy</Link>
+								</li>
+							</>
+						)}
 						<li>
 							<Link to="/blogs">Blogs</Link>
 						</li>
@@ -94,20 +103,11 @@ const Navbar = () => {
 					</ul>
 				</div>
 
-				<div className="navbar-end w-auto">
-					<div className="flex-none">
-						<div className="dropdown dropdown-end">
-							<label className="btn btn-ghost btn-circle avatar">
-								{user && (
-									<div className="tooltip tooltip-bottom tooltip-primary" data-tip={user?.displayName}>
-										<button>
-											<img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="User Profile" />
-										</button>
-									</div>
-								)}
-							</label>
-						</div>
-					</div>
+				<div className="navbar-end w-auto" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+					<label className="btn btn-ghost btn-circle avatar">
+						{user && <img className="w-10 rounded-full" src={user?.photoURL} alt="User Profile" />}
+						{show && user?.displayName}
+					</label>
 				</div>
 			</div>
 		</div>
