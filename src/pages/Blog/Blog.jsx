@@ -1,6 +1,9 @@
+import PageTitle from "../Shared/PageTitle/PageTitle";
+
 const Blog = () => {
 	return (
 		<>
+			<PageTitle title="Toy Cars | Blogs"></PageTitle>
 			<h1>1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
 			<small>
 				An access token is a short-lived credential issued to a client after successful authentication. It grants the client authorization to access

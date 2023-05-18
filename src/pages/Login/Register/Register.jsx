@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Register = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => console.log(data);
 	return (
 		<div>
+			<PageTitle title="Toy Cars | Register"></PageTitle>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/4 mx-auto my-32 space-y-4">
 				{/* register your input into the hook by invoking the "register" function */}
 				<input placeholder="Enter your name" className="border rounded p-2" {...register("name")} />

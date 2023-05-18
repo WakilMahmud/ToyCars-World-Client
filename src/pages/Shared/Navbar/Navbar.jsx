@@ -45,7 +45,7 @@ const Navbar = () => {
 						/>
 					</Link>
 					<Link to="/" className="btn btn-ghost normal-case text-xl">
-						Toy Car
+						Toy Cars
 					</Link>
 				</div>
 				<div className="navbar-center hidden lg:block">

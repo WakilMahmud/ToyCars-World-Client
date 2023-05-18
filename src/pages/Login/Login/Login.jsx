@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Login = () => {
 	const { register, handleSubmit } = useForm();
@@ -7,6 +8,7 @@ const Login = () => {
 
 	return (
 		<div>
+			<PageTitle title="Toy Cars | Login"></PageTitle>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/4 mx-auto my-32 space-y-4">
 				<input type="email" defaultValue="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} />
 				<input type="password" placeholder="Enter your password" className="border rounded p-2" {...register("password")} />
