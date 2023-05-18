@@ -1,10 +1,14 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const ToyCarAccessoriesSection = () => {
 	return (
-		<section className="bg-gray-100 py-8">
+		<section className="bg-gray-100 py-8" data-aos="fade-up">
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center font-bold mb-4">Toy Car Accessories</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Accessory 1 */}
+
 					<div className="bg-white rounded-lg shadow-md p-6">
 						<h3 className="text-xl font-semibold mb-2">Race Track Set</h3>
 						<p className="text-gray-700 mb-4">Price: $39.99</p>

@@ -1,3 +1,7 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const Gallery = () => {
 	const toyCars = [
 		{
@@ -23,7 +27,7 @@ const Gallery = () => {
 	];
 
 	return (
-		<section className="bg-gray-200 py-8">
+		<section className="bg-gray-200 py-8" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center font-bold mb-4">Toy Car Gallery</h2>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
