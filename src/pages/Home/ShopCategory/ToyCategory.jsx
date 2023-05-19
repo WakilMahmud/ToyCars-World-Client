@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -9,20 +9,17 @@ const ToyCategory = ({ toy }) => {
 
 	const { user } = useContext(AuthContext);
 	const navigate = useNavigate();
-	const location = useLocation();
-	const from = location.state?.from?.pathname || "/login";
 
 	const handleViewDetails = () => {
 		if (!user) {
 			Swal.fire({
 				title: "You have to log in first to view details",
-
 				showCancelButton: true,
 				confirmButtonText: "OK",
 			}).then((result) => {
 				/* Read more about isConfirmed, isDenied below */
 				if (result.isConfirmed) {
-					navigate(from, { replace: true });
+					navigate("/login");
 				}
 			});
 		}
