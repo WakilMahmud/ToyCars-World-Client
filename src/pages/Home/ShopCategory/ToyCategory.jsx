@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -8,19 +8,11 @@ const ToyCategory = ({ toy }) => {
 	const { _id, toy_picture, toy_name, price, rating } = toy;
 
 	const { user } = useContext(AuthContext);
-	const navigate = useNavigate();
 
 	const handleViewDetails = () => {
 		if (!user) {
 			Swal.fire({
 				title: "You have to log in first to view details",
-				showCancelButton: true,
-				confirmButtonText: "OK",
-			}).then((result) => {
-				/* Read more about isConfirmed, isDenied below */
-				if (result.isConfirmed) {
-					navigate("/login");
-				}
 			});
 		}
 	};
@@ -36,7 +28,7 @@ const ToyCategory = ({ toy }) => {
 					<p>Price: {price}</p>
 					<p>Rating: {rating}</p>
 					<div className="card-actions justify-center">
-						{user ? (
+						{/* {user ? (
 							<Link to={`/toy/${_id}`}>
 								<button className="btn btn-primary" onClick={handleViewDetails}>
 									View Details
@@ -46,7 +38,13 @@ const ToyCategory = ({ toy }) => {
 							<button className="btn btn-primary" onClick={handleViewDetails}>
 								View Details
 							</button>
-						)}
+						)} */}
+
+						<Link to={`/toy/${_id}`}>
+							<button className="btn btn-primary" onClick={handleViewDetails}>
+								View Details
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>
