@@ -33,16 +33,16 @@ const AllToys = () => {
 					<tbody>
 						{data.map((toy, index) => {
 							return (
-								<tr key={toy._id}>
+								<tr key={toy?._id}>
 									<td>{index + 1}</td>
-									<td>{toy.seller_name}</td>
-									<td>{toy.toy_name}</td>
-									<td>{toy.sub_category}</td>
-									<td>${toy.price}</td>
-									<td className="flex flex-row justify-around">
-										{toy.available_quantity}
+									<td>{toy?.seller_name || ""}</td>
+									<td>{toy?.toy_name || ""}</td>
+									<td>{toy?.sub_category || "Uncategorized"}</td>
+									<td>${toy?.price || 0}</td>
+									<td className="flex flex-row justify-around items-center">
+										{toy?.available_quantity || 0}
 
-										<Link to={`/toy/${toy._id}`}>
+										<Link to={`/toy/${toy?._id}`}>
 											<button className="btn btn-outline">View Details</button>
 										</Link>
 									</td>

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,8 @@ const ToyCategory = ({ toy }) => {
 
 	const { user } = useContext(AuthContext);
 	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/login";
 
 	const handleViewDetails = () => {
 		if (!user) {
@@ -20,7 +22,7 @@ const ToyCategory = ({ toy }) => {
 			}).then((result) => {
 				/* Read more about isConfirmed, isDenied below */
 				if (result.isConfirmed) {
-					navigate("/login");
+					navigate(from, { replace: true });
 				}
 			});
 		}

@@ -10,7 +10,7 @@ const ErrorPage = () => {
 				<img className="h-96" src={ErrorPic} alt="404 Page"></img>
 				<div className="text-center">
 					<Link to="/" className="px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900">
-						Back to homepage
+						Back to Home
 					</Link>
 				</div>
 			</div>
