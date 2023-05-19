@@ -41,6 +41,7 @@ const router = createBrowserRouter([
 			{
 				path: "/update/:id",
 				element: <UpdateToy></UpdateToy>,
+				loader: ({ params }) => fetch(`https://toy-marketplace-server-amber.vercel.app/toy/${params.id}`),
 			},
 			{
 				path: "/blogs",

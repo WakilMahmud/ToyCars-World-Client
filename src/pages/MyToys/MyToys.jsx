@@ -34,7 +34,6 @@ const MyToys = () => {
 							return (
 								<tr key={toy._id}>
 									<td>{index + 1}</td>
-
 									<td>{toy.toy_name}</td>
 									<td>{toy.sub_category}</td>
 									<td>
