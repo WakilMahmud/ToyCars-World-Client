@@ -3,9 +3,9 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
 	return (
-		<footer className="bg-gray-900 py-6">
-			<div className="container mx-auto flex justify-between items-center">
-				<div className="logo flex items-center text-white">
+		<footer className="bg-gray-900 py-6 ">
+			<div className="container mx-auto flex flex-col lg:flex-row justify-evenly">
+				<div className="logo flex items-center gap-4 text-white justify-center">
 					<Link to="/">
 						<img
 							className="h-8 w-8 rounded-full"
@@ -15,12 +15,14 @@ const Footer = () => {
 					</Link>
 					<h2 className="text-xl font-bold">Toy Car</h2>
 				</div>
-				<div className="contact-info text-white">
+				<div className="contact-info text-white space-y-2 mt-16 text-center">
 					<p>Email: info@toycar.com</p>
 					<p>Phone: 123-456-7890</p>
 					<p>Address: 123 Main Street, City, Country</p>
 				</div>
-				<div className="social-media flex items-center">
+
+				<div className="social-media flex items-center justify-center my-8 lg:mt-0">
+					<span className="footer-title mb-0 text-white">Social</span>
 					<Link to="https://www.facebook.com" className="text-white hover:text-blue-500 mx-2">
 						<FaFacebook></FaFacebook>
 					</Link>
@@ -32,8 +34,8 @@ const Footer = () => {
 					</Link>
 				</div>
 			</div>
-			<div className="text-center text-white mt-4">
-				<p>&copy; {new Date().getFullYear()} Toy Car. All rights reserved.</p>
+			<div className="flex justify-center text-white mt-4">
+				<p>Copywright &copy; {new Date().getFullYear()} Toy Car. All rights reserved.</p>
 			</div>
 		</footer>
 	);
