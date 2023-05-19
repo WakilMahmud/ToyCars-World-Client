@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToys = () => {
+	const [sortingState, setSortingState] = useState("Ascending");
 	const [myToys, setMyToys] = useState([]);
 	const { user } = useContext(AuthContext);
 	const [isDeleted, setIsDeleted] = useState(false);
@@ -14,6 +15,18 @@ const MyToys = () => {
 			.then((res) => res.json())
 			.then((data) => setMyToys(data));
 	}, [user, isDeleted]);
+
+	// useEffect(() => {
+	// 	fetch(`https://toy-marketplace-server-amber.vercel.app/toys?email=${user?.email}&sorting=${sortingState}`)
+	// 		.then((res) => res.json())
+	// 		.then((data) => setMyToys(data));
+	// }, [user, isDeleted, sortingState]);
+
+	// useEffect(() => {
+	// 	fetch(`https://toy-marketplace-server-amber.vercel.app/toys/${sortingState}`)
+	// 		.then((res) => res.json())
+	// 		.then((data) => setMyToys(data));
+	// }, [sortingState]);
 
 	const handleDelete = (id) => {
 		Swal.fire({
@@ -43,6 +56,12 @@ const MyToys = () => {
 	return (
 		<div>
 			<PageTitle title="Toy Cars | My Toys"></PageTitle>
+			<button className="btn btn-outline btn-accent" onClick={() => setSortingState("ascending")}>
+				Ascending
+			</button>
+			<button className="btn btn-outline btn-accent" onClick={() => setSortingState("descending")}>
+				Descending
+			</button>
 			<div className="overflow-x-auto my-32 ">
 				<table className="table table-compact w-full">
 					<thead>

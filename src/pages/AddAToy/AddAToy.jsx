@@ -40,9 +40,6 @@ const AddAToy = () => {
 				<input defaultValue={user?.displayName} className="border rounded p-2" {...register("seller_name")} />
 				<input defaultValue={user?.email} className="border rounded p-2" {...register("seller_email")} />
 				<select className="border rounded p-2" {...register("sub_category")}>
-					<option disabled selected value="">
-						Sub category
-					</option>
 					<option value="Sports Car">Sports Car</option>
 					<option value="Regular Car">Regular Car</option>
 					<option value="Truck">Truck</option>
