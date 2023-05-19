@@ -21,7 +21,7 @@ const AddAToy = () => {
 				if (data.insertedId) {
 					Swal.fire({
 						icon: "success",
-						title: "Toy is Posted",
+						title: "Toy is Added",
 						showConfirmButton: false,
 						timer: 1500,
 					});

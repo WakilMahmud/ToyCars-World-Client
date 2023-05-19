@@ -2,20 +2,44 @@ import { useContext, useEffect, useState } from "react";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
 	const [myToys, setMyToys] = useState([]);
 	const { user } = useContext(AuthContext);
+	const [isDeleted, setIsDeleted] = useState(false);
 
 	useEffect(() => {
 		fetch(`https://toy-marketplace-server-amber.vercel.app/toys/${user?.email}`)
 			.then((res) => res.json())
 			.then((data) => setMyToys(data));
-	}, []);
+	}, [user, isDeleted]);
 
 	const handleDelete = (id) => {
-		console.log(id);
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(`https://toy-marketplace-server-amber.vercel.app/toy/${id}`, {
+					method: "DELETE",
+				})
+					.then((res) => res.json())
+					.then((resultData) => {
+						if (resultData.deletedCount > 0) {
+							Swal.fire("Deleted!", "Your file has been deleted.", "success");
+							setIsDeleted(!isDeleted);
+						}
+					});
+			}
+		});
 	};
+
 	return (
 		<div>
 			<PageTitle title="Toy Cars | My Toys"></PageTitle>
