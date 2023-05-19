@@ -8,6 +8,7 @@ import AddAToy from "../pages/AddAToy/AddAToy";
 import Blog from "../pages/Blog/Blog";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import SingleToyDetail from "../pages/SingleToyDetail/SingleToyDetail";
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
 			{
 				path: "/allToys",
 				element: <AllToys></AllToys>,
+			},
+			{
+				path: "/toy/:id",
+				element: <SingleToyDetail></SingleToyDetail>,
+				loader: ({ params }) => fetch(`https://toy-marketplace-server-amber.vercel.app/toy/${params.id}`),
 			},
 			{
 				path: "/myToys",
