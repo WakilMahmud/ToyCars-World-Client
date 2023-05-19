@@ -1,17 +1,44 @@
 import { useForm } from "react-hook-form";
 import PageTitle from "../Shared/PageTitle/PageTitle";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAToy = () => {
-	const { register, handleSubmit } = useForm();
-	const onSubmit = (data) => console.log(data);
+	const { user } = useContext(AuthContext);
+
+	const { register, handleSubmit, reset } = useForm();
+	const onSubmit = (toyData) => {
+		// console.log(toyData);
+
+		fetch("https://toy-marketplace-server-amber.vercel.app/toy", {
+			method: "POST",
+			headers: { "content-type": "application/json" },
+			body: JSON.stringify(toyData),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.insertedId) {
+					Swal.fire({
+						icon: "success",
+						title: "Toy is Posted",
+						showConfirmButton: false,
+						timer: 1500,
+					});
+
+					reset();
+				}
+			});
+	};
+
 	return (
 		<div>
 			<PageTitle title="Toy Cars | Add A Toy"></PageTitle>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/2 mx-auto my-32 space-y-4">
 				<input type="text" placeholder="Picture URL of the toy" className="border rounded p-2" {...register("toy_picture")} />
 				<input placeholder="Toy Name" className="border rounded p-2" {...register("toy_name")} />
-				<input defaultValue="seller name" className="border rounded p-2" {...register("seller_name")} />
-				<input defaultValue="seller email" className="border rounded p-2" {...register("seller_email")} />
+				<input defaultValue={user?.displayName} className="border rounded p-2" {...register("seller_name")} />
+				<input defaultValue={user?.email} className="border rounded p-2" {...register("seller_email")} />
 				<select className="border rounded p-2" {...register("sub_category")}>
 					<option disabled selected value="">
 						Sub category
