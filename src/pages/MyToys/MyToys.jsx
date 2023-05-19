@@ -5,28 +5,16 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToys = () => {
-	const [sortingState, setSortingState] = useState("Ascending");
+	const [sortingState, setSortingState] = useState("ascending");
 	const [myToys, setMyToys] = useState([]);
 	const { user } = useContext(AuthContext);
 	const [isDeleted, setIsDeleted] = useState(false);
 
 	useEffect(() => {
-		fetch(`https://toy-marketplace-server-amber.vercel.app/toys/${user?.email}`)
+		fetch(`https://toy-marketplace-server-amber.vercel.app/toys?email=${user?.email}&sorting=${sortingState}`)
 			.then((res) => res.json())
 			.then((data) => setMyToys(data));
-	}, [user, isDeleted]);
-
-	// useEffect(() => {
-	// 	fetch(`https://toy-marketplace-server-amber.vercel.app/toys?email=${user?.email}&sorting=${sortingState}`)
-	// 		.then((res) => res.json())
-	// 		.then((data) => setMyToys(data));
-	// }, [user, isDeleted, sortingState]);
-
-	// useEffect(() => {
-	// 	fetch(`https://toy-marketplace-server-amber.vercel.app/toys/${sortingState}`)
-	// 		.then((res) => res.json())
-	// 		.then((data) => setMyToys(data));
-	// }, [sortingState]);
+	}, [user, isDeleted, sortingState]);
 
 	const handleDelete = (id) => {
 		Swal.fire({

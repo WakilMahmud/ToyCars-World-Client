@@ -19,9 +19,9 @@ const ToyCategory = ({ toy }) => {
 
 	return (
 		<>
-			<div className="card card-compact w-96 bg-base-100 shadow-xl">
+			<div className="card card-compact bg-base-100 shadow-xl">
 				<figure>
-					<img src={toy_picture} alt="Toy Picture" className="h-40" />
+					<img src={toy_picture} alt="Toy Picture" className="h-40 mt-5" />
 				</figure>
 				<div className="card-body">
 					<h2 className="card-title">{toy_name}</h2>

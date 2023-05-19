@@ -14,7 +14,7 @@ const AllToys = () => {
 	};
 
 	useEffect(() => {
-		fetch("https://toy-marketplace-server-amber.vercel.app/toys/")
+		fetch("https://toy-marketplace-server-amber.vercel.app/allToys")
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log(data);

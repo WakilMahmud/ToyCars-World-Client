@@ -25,7 +25,7 @@ const ShopCategory = () => {
 		<div className="my-32 bg-red-200">
 			<Tabs>
 				<TabList>
-					<div className="flex gap-4 px-10 pt-10">
+					<div className="flex gap-4 px-10 pt-10 mb-7 lg:mb-0">
 						<Tab>
 							<button className="btn btn-outline btn-accent" onClick={() => handleTabButton("Sports Car")}>
 								Sports Car
@@ -45,21 +45,21 @@ const ShopCategory = () => {
 				</TabList>
 
 				<TabPanel>
-					<div className="grid grid-cols-3 gap-4 p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-cols-3 gap-4 p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-cols-3 gap-4 p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
