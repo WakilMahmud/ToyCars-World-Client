@@ -39,8 +39,8 @@ const ShopCategory = () => {
 	// console.log(categoryData);
 
 	return (
-		<div className="mt-20 mb-32 text-center">
-			<h1 className="text-3xl font-bold ">Shop By Category</h1>
+		<div className="mt-10 mb-32 text-center bg-blue-50 rounded-lg">
+			<h1 className="text-3xl font-bold pt-12">Shop By Category</h1>
 			<Tabs>
 				<TabList>
 					<div className="flex justify-center gap-4 px-10 pt-10 mb-7 lg:mb-0">
@@ -63,21 +63,21 @@ const ShopCategory = () => {
 				</TabList>
 
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:p-10">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}

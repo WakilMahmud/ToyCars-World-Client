@@ -32,20 +32,8 @@ const ToyCategory = ({ toy }) => {
 						Rating: <span className="text-blue-500 text-xl">{rating}</span>
 					</p>
 					<div className="card-actions pb-8">
-						{/* {user ? (
-							<Link to={`/toy/${_id}`}>
-								<button className="btn btn-primary" onClick={handleViewDetails}>
-									View Details
-								</button>
-							</Link>
-						) : (
-							<button className="btn btn-primary" onClick={handleViewDetails}>
-								View Details
-							</button>
-						)} */}
-
 						<Link to={`/toy/${_id}`}>
-							<button className="btn btn-primary" onClick={handleViewDetails}>
+							<button className="btn btn-info" onClick={handleViewDetails}>
 								View Details
 							</button>
 						</Link>

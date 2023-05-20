@@ -1,8 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import Spinner from "../Shared/Spinner/Spinner";
 
 const UpdateToy = () => {
+	const navigation = useNavigation();
+
+	if (navigation.state === "loading") {
+		console.log("Loading in Update Page");
+		return <Spinner></Spinner>;
+	}
+
 	const toyData = useLoaderData();
 	const { _id, toy_name } = toyData;
 

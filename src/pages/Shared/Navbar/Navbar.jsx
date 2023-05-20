@@ -13,7 +13,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="navbar sticky top-0 z-10 bg-white font-bold">
+		<div className="navbar sticky top-0 z-10 bg-white font-bold shadow-sm">
 			{/* Responsive Navbar */}
 			<div className="flex-1 md:hidden">
 				<div className="dropdown">
