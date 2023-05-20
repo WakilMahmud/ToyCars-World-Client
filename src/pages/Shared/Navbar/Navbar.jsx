@@ -22,7 +22,7 @@ const Navbar = () => {
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
 						</svg>
 					</label>
-					<ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+					<ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 gap-2 p-2 shadow bg-base-100 rounded-box w-52">
 						<li>
 							<Link to="/">Home</Link>
 						</li>
@@ -70,7 +70,7 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="navbar-center hidden lg:block">
-					<ul className="flex flex-row menu menu-compact mt-3 p-2   rounded-box">
+					<ul className="flex flex-row menu  mt-3 p-2 gap-2 rounded-box">
 						<li>
 							<Link to="/">Home</Link>
 						</li>
@@ -106,7 +106,7 @@ const Navbar = () => {
 				<div className="navbar-end w-auto" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
 					<label className="btn btn-ghost btn-circle avatar">
 						{user && <img className="w-10 rounded-full" src={user?.photoURL} alt="User Profile" />}
-						{show && user?.displayName}
+						{show && <small className="text-blue-300 relative lg:-right-11 lg:-top-8">{user?.displayName}</small>}
 					</label>
 				</div>
 			</div>

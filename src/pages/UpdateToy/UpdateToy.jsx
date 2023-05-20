@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const UpdateToy = () => {
 	const toyData = useLoaderData();
-	const { _id, toy_name, sub_category } = toyData;
+	const { _id, toy_name } = toyData;
 
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = (data) => {
@@ -42,7 +42,7 @@ const UpdateToy = () => {
 			{/* register your input into the hook by invoking the "register" function */}
 
 			<input defaultValue={toy_name} className="border rounded p-2" />
-			<input defaultValue={sub_category || "Sub_Category"} className="border rounded p-2" />
+
 			<input placeholder="Price" {...register("price")} className="border rounded p-2" />
 			<input placeholder="Available Quantity" {...register("available_quantity")} className="border rounded p-2" />
 			<input placeholder="Detail Description" {...register("detail_description")} className="border rounded p-2" />

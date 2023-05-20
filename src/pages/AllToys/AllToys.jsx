@@ -8,8 +8,14 @@ const AllToys = () => {
 	const [data, setData] = useState([]);
 
 	const { register, handleSubmit, reset } = useForm();
-	const onSubmit = (toyData) => {
-		console.log(toyData);
+	const onSubmit = (toy) => {
+		const search = toy.toy_name;
+
+		fetch(`https://toy-marketplace-server-amber.vercel.app/allToys/${search}`)
+			.then((res) => res.json())
+			.then((data) => {
+				setData(data);
+			});
 		reset();
 	};
 
@@ -64,6 +70,8 @@ const AllToys = () => {
 					</tbody>
 				</table>
 			</div>
+
+			{data.length == 0 && <p className="text-red-500 text-3xl font-bold text-center mb-32">NO TOY FOUND</p>}
 		</div>
 	);
 };
