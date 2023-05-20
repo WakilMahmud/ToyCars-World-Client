@@ -13,7 +13,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="navbar sticky top-0 z-10 bg-white">
+		<div className="navbar sticky top-0 z-10 bg-white font-bold">
 			{/* Responsive Navbar */}
 			<div className="flex-1 md:hidden">
 				<div className="dropdown">
@@ -65,8 +65,8 @@ const Navbar = () => {
 							alt="Logo"
 						/>
 					</Link>
-					<Link to="/" className="btn btn-ghost normal-case text-xl">
-						Toy Cars
+					<Link to="/" className="btn btn-ghost normal-case text-2xl font-extrabold">
+						ToyCars World
 					</Link>
 				</div>
 				<div className="navbar-center hidden lg:block">

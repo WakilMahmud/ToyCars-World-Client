@@ -3,6 +3,7 @@ import PageTitle from "../Shared/PageTitle/PageTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./MyToys.css";
 
 const MyToys = () => {
 	const [sortingState, setSortingState] = useState("ascending");
@@ -44,35 +45,37 @@ const MyToys = () => {
 	return (
 		<div>
 			<PageTitle title="Toy Cars | My Toys"></PageTitle>
-			<button className="btn btn-outline btn-accent" onClick={() => setSortingState("ascending")}>
-				Ascending
-			</button>
-			<button className="btn btn-outline btn-accent" onClick={() => setSortingState("descending")}>
-				Descending
-			</button>
-			<div className="overflow-x-auto my-32 ">
-				<table className="table table-compact w-full">
+			<div className="mt-20 mb-8 flex gap-4 justify-center">
+				<button className="btn btn-outline btn-accent" onClick={() => setSortingState("ascending")}>
+					Ascending
+				</button>
+				<button className="btn btn-outline btn-accent" onClick={() => setSortingState("descending")}>
+					Descending
+				</button>
+			</div>
+			<div className="overflow-x-auto mb-32 max-w-fit mx-auto">
+				<table className="table">
 					<thead>
 						<tr>
-							<th>Index</th>
-							<th>Toy Name</th>
-							<th>Sub-Category</th>
-							<th>Price</th>
+							<th className="text-base">Index</th>
+							<th className="text-base">Toy Name</th>
+							<th className="text-base">Sub-Category</th>
+							<th className="text-base">Price</th>
 						</tr>
 					</thead>
 					<tbody>
 						{myToys?.map((toy, index) => {
 							return (
-								<tr key={toy._id}>
+								<tr key={toy?._id}>
 									<td>{index + 1}</td>
-									<td>{toy.toy_name}</td>
-									<td>{toy.sub_category}</td>
-									<td>
-										${toy.price}
-										<Link to={`/update/${toy._id}`}>
+									<td>{toy?.toy_name}</td>
+									<td>{toy?.sub_category}</td>
+									<td className="flex gap-2 items-center">
+										<p className="w-16">${toy?.price}</p>
+										<Link to={`/update/${toy?._id}`}>
 											<button className="btn btn-outline mx-2">Update</button>
 										</Link>
-										<button className="btn btn-outline" onClick={() => handleDelete(toy._id)}>
+										<button className="btn btn-outline" onClick={() => handleDelete(toy?._id)}>
 											Delete
 										</button>
 									</td>

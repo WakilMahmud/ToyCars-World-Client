@@ -35,7 +35,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="flex justify-center text-white mt-4">
-				<p>Copywright &copy; {new Date().getFullYear()} Toy Car. All rights reserved.</p>
+				<p>Copywright &copy; {new Date().getFullYear()} ToyCars World. All rights reserved.</p>
 			</div>
 		</footer>
 	);

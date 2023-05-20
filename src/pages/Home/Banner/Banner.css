@@ -1,0 +1,8 @@
+#banner-div {
+	background: linear-gradient(rgba(31, 30, 31, 0.4), rgba(3, 0, 5, 0.921)),
+		url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ4_fG3e17VBaXHl93_pvPYXn6iWprK7F8H4wbQdCSn5D6Zt8su);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	opacity: 0.9;
+}
