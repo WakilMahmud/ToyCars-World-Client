@@ -4,7 +4,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-
+import login from "../../../assets/login.png";
 const Login = () => {
 	const { signIn, googleLogin } = useContext(AuthContext);
 	const navigate = useNavigate();
@@ -52,23 +52,31 @@ const Login = () => {
 	return (
 		<>
 			<PageTitle title="Toy Cars | Login"></PageTitle>
-			<div className="flex flex-col justify-center items-center my-32">
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/4 mx-auto  space-y-4">
-					<input type="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} required />
-					<input type="password" placeholder="Enter your password" className="border rounded p-2" {...register("password")} required />
 
-					<input className="btn btn-info" type="submit" value="Login" />
+			<div className="flex flex-row gap-4 my-32">
+				<div className="flex flex-col justify-center items-center my-32 w-2/5">
+					<h1 className="text-3xl font-extrabold mb-8">Login</h1>
+					<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-3/4 mx-auto  space-y-4">
+						<input type="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} required />
+						<input type="password" placeholder="Enter your password" className="border rounded p-2" {...register("password")} required />
 
-					<p>
-						New User?
-						<Link to="/register">
-							<button className="btn btn-active btn-link">Register</button>
-						</Link>
-					</p>
-				</form>
-				<button className="btn btn-warning w-1/4" onClick={handleGoogleLogin}>
-					Sign in with Google
-				</button>
+						<input className="btn btn-info rounded-full" type="submit" value="Login" />
+
+						<p>
+							New User?
+							<Link to="/register">
+								<button className="btn btn-active btn-link">Register</button>
+							</Link>
+						</p>
+					</form>
+					<div className="divider w-full ">OR</div>
+					<button className="btn btn-warning w-3/4 rounded-full" onClick={handleGoogleLogin}>
+						Sign in with Google
+					</button>
+				</div>
+				<div className="w-1/2">
+					<img className="w-full" src={login} alt="Login Image" />
+				</div>
 			</div>
 		</>
 	);

@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { getAuth, updateProfile } from "firebase/auth";
+import registerImg from "../../../assets/register.png";
 
 const auth = getAuth();
 
@@ -64,27 +65,37 @@ const Register = () => {
 			});
 	};
 	return (
-		<div>
+		<>
 			<PageTitle title="Toy Cars | Register"></PageTitle>
-			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/4 mx-auto my-32 space-y-4">
-				{/* register your input into the hook by invoking the "register" function */}
-				<input placeholder="Enter your name" className="border rounded p-2" {...register("name")} />
-				<input type="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} required />
 
-				<input type="password" placeholder="Enter your password" className="border rounded p-2" {...register("password")} required />
-				{passwordError && <small className="text-red-500">{passwordError}</small>}
-				<input placeholder="Photo URL" className="border rounded p-2" {...register("photo")} />
+			<div className="flex gap-4 my-32">
+				<div className="flex flex-col  items-center w-1/2">
+					<h1 className="text-3xl font-extrabold ">Register</h1>
+					<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col mx-auto my-10 space-y-4 w-3/5">
+						{/* register your input into the hook by invoking the "register" function */}
+						<input placeholder="Enter your name" className="border rounded p-2" {...register("name")} />
+						<input type="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} required />
 
-				<input className="btn btn-info" type="submit" value="Register" />
+						<input type="password" placeholder="Enter your password" className="border rounded p-2" {...register("password")} required />
+						{passwordError && <small className="text-red-500">{passwordError}</small>}
+						<input placeholder="Photo URL" className="border rounded p-2" {...register("photo")} />
 
-				<p>
-					Already have an account?
-					<Link to="/login">
-						<button className="btn btn-active btn-link">Login</button>
-					</Link>
-				</p>
-			</form>
-		</div>
+						<input className="btn btn-info rounded-full" type="submit" value="Register" />
+
+						<p>
+							Already have an account?
+							<Link to="/login">
+								<button className="btn btn-active btn-link">Login</button>
+							</Link>
+						</p>
+					</form>
+				</div>
+
+				<div className="w-1/2">
+					<img className="w-full" src={registerImg} alt="Register Image" />
+				</div>
+			</div>
+		</>
 	);
 };
 
