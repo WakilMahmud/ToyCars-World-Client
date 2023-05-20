@@ -7,6 +7,9 @@ import "./MyToys.css";
 
 const MyToys = () => {
 	const [sortingState, setSortingState] = useState("ascending");
+	const [clickAscending, setClickAscending] = useState(true);
+	const [clickDescending, setClickDescending] = useState(false);
+
 	const [myToys, setMyToys] = useState([]);
 	const { user } = useContext(AuthContext);
 	const [isDeleted, setIsDeleted] = useState(false);
@@ -42,14 +45,24 @@ const MyToys = () => {
 		});
 	};
 
+	const handleSortingState = (type) => {
+		setSortingState(type);
+		if (type === "ascending") {
+			setClickAscending(!clickAscending);
+			setClickDescending(false);
+		} else {
+			setClickDescending(!clickDescending);
+			setClickAscending(false);
+		}
+	};
 	return (
 		<div>
 			<PageTitle title="Toy Cars | My Toys"></PageTitle>
 			<div className="mt-20 mb-8 flex gap-4 justify-center">
-				<button className="btn btn-outline btn-accent" onClick={() => setSortingState("ascending")}>
+				<button className={`btn  btn-info ${clickAscending ? "btn-primary" : "btn-outline"}`} onClick={() => handleSortingState("ascending")}>
 					Ascending
 				</button>
-				<button className="btn btn-outline btn-accent" onClick={() => setSortingState("descending")}>
+				<button className={`btn  btn-info ${clickDescending ? "btn-primary" : "btn-outline"}`} onClick={() => handleSortingState("descending")}>
 					Descending
 				</button>
 			</div>

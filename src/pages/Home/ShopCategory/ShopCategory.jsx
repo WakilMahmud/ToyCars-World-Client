@@ -4,11 +4,28 @@ import ToyCategory from "./ToyCategory";
 
 const ShopCategory = () => {
 	const [category, setCategory] = useState("Sports Car");
+	const [clickSportsCar, setClickSportsCar] = useState(true);
+	const [clickTruck, setClickTruck] = useState(false);
+	const [clickRegularCar, setRegularCar] = useState(false);
 
 	const [categoryData, setCategoryData] = useState([]);
 
 	const handleTabButton = (type) => {
 		setCategory(type);
+
+		if (type === "Sports Car") {
+			setClickSportsCar(!clickSportsCar);
+			setClickTruck(false);
+			setRegularCar(false);
+		} else if (type === "Truck") {
+			setClickSportsCar(false);
+			setClickTruck(!clickTruck);
+			setRegularCar(false);
+		} else {
+			setClickSportsCar(false);
+			setClickTruck(false);
+			setRegularCar(!clickRegularCar);
+		}
 	};
 
 	useEffect(() => {
@@ -22,22 +39,23 @@ const ShopCategory = () => {
 	// console.log(categoryData);
 
 	return (
-		<div className="my-32 bg-red-200">
+		<div className="mt-20 mb-32 text-center">
+			<h1 className="text-3xl font-bold ">Shop By Category</h1>
 			<Tabs>
 				<TabList>
-					<div className="flex gap-4 px-10 pt-10 mb-7 lg:mb-0">
+					<div className="flex justify-center gap-4 px-10 pt-10 mb-7 lg:mb-0">
 						<Tab>
-							<button className="btn btn-outline btn-accent" onClick={() => handleTabButton("Sports Car")}>
+							<button className={`btn  btn-info ${clickSportsCar ? "btn-primary" : "btn-outline"}`} onClick={() => handleTabButton("Sports Car")}>
 								Sports Car
 							</button>
 						</Tab>
 						<Tab>
-							<button className="btn btn-outline btn-accent" onClick={() => handleTabButton("Truck")}>
+							<button className={`btn  btn-info ${clickTruck ? "btn-primary" : "btn-outline"}`} onClick={() => handleTabButton("Truck")}>
 								Truck
 							</button>
 						</Tab>
 						<Tab>
-							<button className="btn btn-outline btn-accent" onClick={() => handleTabButton("Regular Car")}>
+							<button className={`btn  btn-info ${clickRegularCar ? "btn-primary" : "btn-outline"}`} onClick={() => handleTabButton("Regular Car")}>
 								Regular Car
 							</button>
 						</Tab>

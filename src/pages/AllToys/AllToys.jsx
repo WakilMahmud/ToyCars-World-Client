@@ -25,12 +25,12 @@ const AllToys = () => {
 	return (
 		<div>
 			<PageTitle title="Toy Cars | All Toys"></PageTitle>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form onSubmit={handleSubmit(onSubmit)} className="flex justify-end mt-32">
 				<input placeholder="Toy Name" className="border rounded p-2 mr-2" {...register("toy_name")} />
 				<input className="btn btn-info" type="submit" value="Search" />
 			</form>
 
-			<div className="overflow-x-auto my-32 ">
+			<div className="overflow-x-auto mt-4 mb-32 ">
 				<table className="table table-compact w-full">
 					<thead>
 						<tr>
@@ -55,7 +55,7 @@ const AllToys = () => {
 										{toy?.available_quantity || 0}
 
 										<Link to={`/toy/${toy?._id}`}>
-											<button className="btn btn-outline">View Details</button>
+											<button className="btn btn-outline btn-info">View Details</button>
 										</Link>
 									</td>
 								</tr>

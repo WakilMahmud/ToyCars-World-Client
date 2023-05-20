@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
 	return (
-		<footer className="bg-gray-900 py-6 ">
+		<footer className="bg-gray-900 pt-6 pb-20">
 			<div className="container mx-auto flex flex-col lg:flex-row justify-evenly">
 				<div className="logo flex items-center gap-4 text-white justify-center">
 					<Link to="/">
@@ -13,7 +13,7 @@ const Footer = () => {
 							alt="Logo"
 						/>
 					</Link>
-					<h2 className="text-xl font-bold">Toy Car</h2>
+					<h2 className="text-xl font-bold">ToyCars World</h2>
 				</div>
 				<div className="contact-info text-white space-y-2 mt-16 text-center">
 					<p>Email: info@toycar.com</p>
@@ -34,7 +34,7 @@ const Footer = () => {
 					</Link>
 				</div>
 			</div>
-			<div className="flex justify-center text-white mt-4">
+			<div className="flex justify-center text-white mt-8">
 				<p>Copywright &copy; {new Date().getFullYear()} ToyCars World. All rights reserved.</p>
 			</div>
 		</footer>

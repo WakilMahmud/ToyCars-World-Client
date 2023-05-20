@@ -27,14 +27,14 @@ const Gallery = () => {
 	];
 
 	return (
-		<section className="bg-gray-200 py-8" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+		<section className=" pb-8" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
 			<div className="container mx-auto p-6">
-				<h2 className="text-3xl text-center font-bold mt-4 mb-8">Toy Car Gallery</h2>
+				<h2 className="text-3xl text-center font-bold mt-4 mb-8">Toy Cars Gallery</h2>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-					{toyCars.map((toyCar) => (
-						<div key={toyCar.id} className="bg-white rounded-lg shadow-md p-4 text-center">
-							<img src={toyCar.image} alt={toyCar.name} className="w-32 h-28 mx-auto mb-4" />
-							<h3 className="text-lg font-semibold">{toyCar.name}</h3>
+					{toyCars?.map((toyCar) => (
+						<div key={toyCar?.id} className="bg-white rounded-lg shadow-md p-4 text-center">
+							<img src={toyCar?.image} alt={toyCar?.name} className="w-32 h-28 mx-auto mb-4" />
+							<h3 className="text-lg font-semibold">{toyCar?.name}</h3>
 						</div>
 					))}
 				</div>
