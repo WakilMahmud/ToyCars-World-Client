@@ -1,13 +1,13 @@
 const ToyCarRacingEventsSection = () => {
 	return (
-		<section className="bg-gray-100 py-8">
+		<section className="">
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center font-bold mb-4">Toy Car Racing Events</h2>
-				<p className="text-center text-gray-700 mb-8">Join us for exciting toy car racing events and competitions!</p>
+				<p className="text-center text-gray-700 text-lg mb-8">Join us for exciting toy car racing events and competitions!</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{/* Racing Event 1 */}
-					<div className="bg-white rounded-lg shadow-md p-6">
-						<h3 className="text-xl font-semibold mb-2">Super Speed Race</h3>
+					<div className="bg-gradient-to-b from-gray-200 to-white-500 rounded-lg shadow-md p-6">
+						<h3 className="font-serif  text-xl font-semibold mb-2">Super Speed Race</h3>
 						<p className="text-gray-700 mb-4">Date: June 20, 2023</p>
 						<p className="text-gray-700 mb-4">Location: Toy Car Circuit</p>
 						<p className="text-gray-700">
@@ -17,8 +17,8 @@ const ToyCarRacingEventsSection = () => {
 					</div>
 
 					{/* Racing Event 2 */}
-					<div className="bg-white rounded-lg shadow-md p-6">
-						<h3 className="text-xl font-semibold mb-2">Off-Road Adventure Challenge</h3>
+					<div className="bg-gradient-to-b from-gray-200 to-white-500 rounded-lg shadow-md p-6">
+						<h3 className="font-serif  text-xl font-semibold mb-2">Off-Road Adventure Challenge</h3>
 						<p className="text-gray-700 mb-4">Date: July 15, 2023</p>
 						<p className="text-gray-700 mb-4">Location: Toy Car Off-Road Track</p>
 						<p className="text-gray-700">
@@ -28,8 +28,8 @@ const ToyCarRacingEventsSection = () => {
 					</div>
 
 					{/* Racing Event 3 */}
-					<div className="bg-white rounded-lg shadow-md p-6">
-						<h3 className="text-xl font-semibold mb-2">Drag Race Showdown</h3>
+					<div className="bg-gradient-to-b from-gray-200 to-white-500 rounded-lg shadow-md p-6">
+						<h3 className="font-serif  text-xl font-semibold mb-2">Drag Race Showdown</h3>
 						<p className="text-gray-700 mb-4">Date: August 10, 2023</p>
 						<p className="text-gray-700 mb-4">Location: Toy Car Drag Strip</p>
 						<p className="text-gray-700">

@@ -82,7 +82,7 @@ const Faq = () => {
 					))}
 				</div>
 				<div className="w-full lg:w-1/2 order-1 lg:order-2">
-					<img src={faq} alt="Frequently Asked Questions" />
+					<img className="w-full" src={faq} alt="Frequently Asked Questions" />
 				</div>
 			</div>
 		</div>
