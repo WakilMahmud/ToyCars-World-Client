@@ -27,7 +27,7 @@ const Gallery = () => {
 	];
 
 	return (
-		<section className=" pb-8" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+		<section className="pb-8" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
 			<div className="container mx-auto p-6">
 				<h2 className="text-3xl text-center font-bold mt-4 mb-8">Toy Cars Gallery</h2>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -51,10 +51,10 @@ const Login = () => {
 
 	return (
 		<>
-			<PageTitle title="Toy Cars | Login"></PageTitle>
+			<PageTitle title="ToyCars World | Login"></PageTitle>
 
-			<div className="flex flex-row gap-4 my-32">
-				<div className="flex flex-col justify-center items-center my-32 w-2/5">
+			<div className="flex flex-col lg:flex-row gap-4 my-32">
+				<div className="flex flex-col justify-center items-center my-32 w-full lg:w-2/5 border py-10 rounded order-2">
 					<h1 className="text-3xl font-extrabold mb-8">Login</h1>
 					<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-3/4 mx-auto  space-y-4">
 						<input type="email" placeholder="Enter your email" className="border rounded p-2" {...register("email")} required />
@@ -74,7 +74,7 @@ const Login = () => {
 						Sign in with Google
 					</button>
 				</div>
-				<div className="w-1/2">
+				<div className="w-full lg:w-1/2 order-1">
 					<img className="w-full" src={login} alt="Login Image" />
 				</div>
 			</div>

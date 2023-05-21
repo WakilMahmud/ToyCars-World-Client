@@ -63,21 +63,21 @@ const ShopCategory = () => {
 				</TabList>
 
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-2 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-2 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-0 lg:py-16 lg:px-8">
+					<div className="grid grid-col-1 lg:grid-cols-3 gap-4 p-2 lg:py-16 lg:px-8">
 						{categoryData.map((toy) => (
 							<ToyCategory toy={toy} key={toy._id}></ToyCategory>
 						))}

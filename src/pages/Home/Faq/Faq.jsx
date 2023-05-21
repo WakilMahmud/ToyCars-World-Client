@@ -49,12 +49,12 @@ const Faq = () => {
 		},
 	];
 	return (
-		<div className="my-32">
+		<div className="my-32 bg-white">
 			<h1 className="text-3xl font-bold text-center mb-16">Frequently Asked Questions</h1>
-			<div className="flex flex-col lg:flex-row gap-8" data-aos="zoom-in-left">
+			<div className="flex flex-col lg:flex-row lg:gap-4" data-aos="zoom-in-left">
 				<div className="w-full lg:w-1/2 order-2 lg:order-1">
 					{faqData.map((faq, index) => (
-						<div key={index} className="mb-4">
+						<div key={index} className="mb-4 px-2">
 							<button
 								className="flex justify-between items-center w-full py-2 px-4 bg-gray-200 hover:bg-gray-300 focus:outline-none rounded-sm"
 								onClick={() => handleAccordionClick(index)}
@@ -62,7 +62,6 @@ const Faq = () => {
 								<span className="font-semibold">{faq.question}</span>
 								<svg
 									className={`w-4 h-4 transition-transform duration-300 ${activeIndex === index ? "transform rotate-180" : ""}`}
-									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
@@ -75,7 +74,7 @@ const Faq = () => {
 							</button>
 							{activeIndex === index && (
 								<div className="px-4 py-2  bg-gray-100">
-									<p className="text-gray-800">{faq.answer}</p>
+									<p className="text-gray-800 text-justify">{faq.answer}</p>
 								</div>
 							)}
 						</div>

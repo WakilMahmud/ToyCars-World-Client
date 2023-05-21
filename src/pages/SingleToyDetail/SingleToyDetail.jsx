@@ -8,7 +8,7 @@ const SingleToyDetail = () => {
 
 	return (
 		<div className="card my-32">
-			<figure className="w-1/2 h-96 mx-auto">
+			<figure className="w-full lg:w-1/2 h-96 mx-auto">
 				<img className="h-full object-cover" src={toy_picture} alt="Toy Picture" />
 			</figure>
 			<div className="card-body text-lg">
@@ -33,7 +33,7 @@ const SingleToyDetail = () => {
 					Rating: <span className="text-blue-500 text-xl">{rating}</span>
 				</p>
 				<p className="font-semibold text-gray-500">
-					Available Quantity: <span className="font-bold text-gray-950">{available_quantity}</span>
+					Available Quantity: <span className="font-bold text-orange-500">{available_quantity}</span>
 				</p>
 				<p className="font-semibold text-gray-500">
 					Description: <span className="font-thin text-gray-950">{detail_description}</span>

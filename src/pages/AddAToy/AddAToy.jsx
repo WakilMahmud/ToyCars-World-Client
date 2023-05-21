@@ -33,9 +33,9 @@ const AddAToy = () => {
 
 	return (
 		<div>
-			<PageTitle title="Toy Cars | Add A Toy"></PageTitle>
-			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-1/2 mx-auto my-32 space-y-4">
-				<input type="text" placeholder="Picture URL of the toy" className="border rounded p-2" {...register("toy_picture")} />
+			<PageTitle title="ToyCars World | Add A Toy"></PageTitle>
+			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-3/5 bg-gray-900 mx-auto my-32 space-y-4 border p-16 rounded-lg">
+				<input type="text" placeholder="Picture URL of the Toy" className="border rounded p-2" {...register("toy_picture")} />
 				<input placeholder="Toy Name" className="border rounded p-2" {...register("toy_name")} />
 				<input defaultValue={user?.displayName} className="border rounded p-2" {...register("seller_name")} />
 				<input defaultValue={user?.email} className="border rounded p-2" {...register("seller_email")} />

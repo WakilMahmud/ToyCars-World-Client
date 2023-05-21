@@ -66,10 +66,10 @@ const Register = () => {
 	};
 	return (
 		<>
-			<PageTitle title="Toy Cars | Register"></PageTitle>
+			<PageTitle title="ToyCars World | Register"></PageTitle>
 
-			<div className="flex gap-4 my-32">
-				<div className="flex flex-col  items-center w-1/2">
+			<div className="flex flex-col lg:flex-row gap-4 my-32">
+				<div className="flex flex-col justify-center items-center w-full lg:w-2/5 border rounded order-2">
 					<h1 className="text-3xl font-extrabold ">Register</h1>
 					<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col mx-auto my-10 space-y-4 w-3/5">
 						{/* register your input into the hook by invoking the "register" function */}
@@ -91,7 +91,7 @@ const Register = () => {
 					</form>
 				</div>
 
-				<div className="w-1/2">
+				<div className="w-full lg:w-1/2 order-1">
 					<img className="w-full" src={registerImg} alt="Register Image" />
 				</div>
 			</div>

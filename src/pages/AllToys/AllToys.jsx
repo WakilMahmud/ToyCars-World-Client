@@ -29,7 +29,7 @@ const AllToys = () => {
 
 	return (
 		<div>
-			<PageTitle title="Toy Cars | All Toys"></PageTitle>
+			<PageTitle title="ToyCars World | All Toys"></PageTitle>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex justify-end mt-32">
 				<input placeholder="Toy Name" className="border rounded p-2 mr-2" {...register("toy_name")} />
 				<input className="btn btn-info" type="submit" value="Search" />

@@ -1,11 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./MyToys.css";
+import Spinner from "../Shared/Spinner/Spinner";
 
 const MyToys = () => {
+	const navigate = useNavigation();
+
+	if (navigate.state === "loading") {
+		return <Spinner></Spinner>;
+	}
+
 	const [sortingState, setSortingState] = useState("ascending");
 	const [clickAscending, setClickAscending] = useState(true);
 	const [clickDescending, setClickDescending] = useState(false);
@@ -37,7 +44,7 @@ const MyToys = () => {
 					.then((res) => res.json())
 					.then((resultData) => {
 						if (resultData.deletedCount > 0) {
-							Swal.fire("Deleted!", "Your file has been deleted.", "success");
+							Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
 							setIsDeleted(!isDeleted);
 						}
 					});
@@ -57,7 +64,7 @@ const MyToys = () => {
 	};
 	return (
 		<div>
-			<PageTitle title="Toy Cars | My Toys"></PageTitle>
+			<PageTitle title="ToyCars World | My Toys"></PageTitle>
 			{myToys.length > 0 && (
 				<>
 					<div className="mt-20 mb-8 flex gap-4 justify-center">
@@ -89,9 +96,9 @@ const MyToys = () => {
 											<td className="flex gap-2 items-center">
 												<p className="w-16">${toy?.price}</p>
 												<Link to={`/update/${toy?._id}`}>
-													<button className="btn btn-outline mx-2">Update</button>
+													<button className="btn btn-outline btn-info mx-2">Update</button>
 												</Link>
-												<button className="btn btn-outline" onClick={() => handleDelete(toy?._id)}>
+												<button className="btn btn-outline btn-error" onClick={() => handleDelete(toy?._id)}>
 													Delete
 												</button>
 											</td>
@@ -104,7 +111,7 @@ const MyToys = () => {
 				</>
 			)}
 
-			{/* {myToys.length == 0 && <p className="text-red-500 text-3xl font-bold text-center mb-32">You have not added any toy yet </p>} */}
+			{myToys.length == 0 && <p className="text-red-500 text-3xl font-bold text-center mb-32">You have not added any toy yet </p>}
 		</div>
 	);
 };

@@ -8,7 +8,7 @@ import ToyCarRacingEventsSection from "../ToyCarRacingEvent/ToyCarRacingEventsSe
 const Home = () => {
 	return (
 		<>
-			<PageTitle title="Toy Cars | Home"></PageTitle>
+			<PageTitle title="ToyCars World | Home"></PageTitle>
 			<Banner></Banner>
 			<Gallery></Gallery>
 			<ShopCategory></ShopCategory>
