@@ -65,7 +65,7 @@ const ToyCarRacingEventsSection = () => {
 					</div>
 				</div>
 			</section>
-			<div className="max-w-7xl mx-auto h-px bg-black"></div>
+			{/* <div className="max-w-7xl mx-auto h-px bg-black"></div> */}
 		</>
 	);
 };

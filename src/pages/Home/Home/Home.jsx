@@ -5,6 +5,7 @@ import ShopCategory from "../ShopCategory/ShopCategory";
 import Faq from "../Faq/Faq";
 import ToyCarRacingEventsSection from "../ToyCarRacingEvent/ToyCarRacingEventsSection";
 import TestimonialSection from "../TestimonialSection/TestimonialSection";
+import GetInTouchSection from "../GetInTouchSection/GetInTouchSection";
 
 const Home = () => {
 	return (
@@ -15,6 +16,7 @@ const Home = () => {
 			<ShopCategory></ShopCategory>
 			<TestimonialSection></TestimonialSection>
 			<ToyCarRacingEventsSection></ToyCarRacingEventsSection>
+			<GetInTouchSection></GetInTouchSection>
 			<Faq></Faq>
 		</>
 	);
