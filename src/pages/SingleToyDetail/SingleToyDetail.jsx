@@ -7,7 +7,7 @@ const SingleToyDetail = () => {
 	const { toy_picture, toy_name, seller_name, seller_email, sub_category, price, rating, available_quantity, detail_description } = singleData;
 
 	return (
-		<div className="card my-32">
+		<div className="max-w-7xl mx-auto card my-32">
 			<figure className="w-full lg:w-1/2 h-96 mx-auto">
 				<img className="h-full object-cover" src={toy_picture} alt="Toy Picture" />
 			</figure>

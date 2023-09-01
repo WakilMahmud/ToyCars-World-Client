@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const ToyCategory = ({ toy }) => {
 	// console.log(toy);
@@ -19,25 +21,26 @@ const ToyCategory = ({ toy }) => {
 
 	return (
 		<>
-			<div className="card bg-base-100 shadow-xl">
+			<div className="card shadow-xl">
 				<figure>
-					<img src={toy_picture} alt="Toy Picture" className="h-40 mt-5 rounded-lg" />
+					<img src={toy_picture} alt="Toy Picture" className="h-72 w-full rounded-lg rounded-b-none border object-cover object-center" />
 				</figure>
-				<div className="flex flex-col justify-center items-center space-y-4 mt-8">
+				<div className="flex justify-between mt-6 px-6">
 					<h2 className="card-title">{toy_name}</h2>
-					<p className="font-semibold text-gray-500">
-						Price: <span className="text-red-500">${price}</span>
+					<p className="font-semibold">
+						<span className="text-red-500">${price}</span>
 					</p>
-					<p className="font-semibold text-gray-500">
-						Rating: <span className="text-blue-500 text-xl">{rating}</span>
-					</p>
-					<div className="card-actions pb-8">
-						<Link to={`/toy/${_id}`}>
-							<button className="btn btn-info" onClick={handleViewDetails}>
-								View Details
-							</button>
-						</Link>
-					</div>
+				</div>
+				<div className="flex  items-center gap-2 my-2 mb-4 px-6">
+					<Rating style={{ maxWidth: 180 }} value={Math.round(rating)} readOnly />
+					<h1 className="text-sky-500  font-bold">{rating}</h1>
+				</div>
+				<div className="pb-8 w-full">
+					<Link to={`/toy/${_id}`}>
+						<button className="btn btn-info w-11/12" onClick={handleViewDetails}>
+							View Details
+						</button>
+					</Link>
 				</div>
 			</div>
 		</>

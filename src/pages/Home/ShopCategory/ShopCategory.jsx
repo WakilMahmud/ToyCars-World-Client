@@ -39,7 +39,7 @@ const ShopCategory = () => {
 	// console.log(categoryData);
 
 	return (
-		<div className="mt-10 mb-32 text-center bg-blue-50 rounded-lg">
+		<div className="max-w-7xl mx-auto mt-10 mb-32 text-center bg-blue-50 rounded-lg">
 			<h1 className="text-3xl font-bold pt-12">Shop By Category</h1>
 			<Tabs>
 				<TabList>
