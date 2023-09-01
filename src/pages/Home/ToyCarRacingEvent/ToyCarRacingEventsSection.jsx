@@ -4,7 +4,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 const ToyCarRacingEventsSection = () => {
 	return (
 		<>
-			<div className="max-w-7xl mx-auto  h-px bg-black"></div>
+			{/* <div className="max-w-7xl mx-auto  h-px bg-black"></div> */}
 			<section className="max-w-7xl mx-auto py-12">
 				<div className="container mx-auto mb-4">
 					<h2 className="text-3xl text-center font-bold mb-4">Toy Car Racing Events</h2>

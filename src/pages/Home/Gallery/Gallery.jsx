@@ -32,7 +32,7 @@ const Gallery = () => {
 				<h2 className="text-3xl text-center font-bold mt-4 mb-8">Toy Cars Gallery</h2>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 					{toyCars?.map((toyCar) => (
-						<div key={toyCar?.id} className="bg-white rounded-lg shadow-md  text-center border">
+						<div key={toyCar?.id} className="bg-white rounded-lg shadow-md  text-center border hover:scale-110 hover:transition">
 							<img src={toyCar?.image} alt={toyCar?.name} className="w-32 h-28 mx-auto mb-4" />
 							<h3 className="text-lg font-semibold bg-black text-white p-1 rounded-b-lg">{toyCar?.name}</h3>
 						</div>
