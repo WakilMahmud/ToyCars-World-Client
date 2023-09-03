@@ -36,8 +36,8 @@ const TestimonialSection = () => {
 	};
 
 	return (
-		<section className="max-w-7xl m-auto testimonial-section my-10 ">
-			<div className="container mx-auto px-4 ">
+		<section className="max-w-7xl m-auto testimonial-section my-10">
+			<div className="w-full mx-auto px-4 ">
 				<h2 className="text-3xl font-bold text-center mb-6">What Our Customers Say</h2>
 				<Slider {...settings}>
 					{testimonialData.map((testimonial) => (

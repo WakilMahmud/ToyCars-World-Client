@@ -51,7 +51,7 @@ const Faq = () => {
 	return (
 		<div className="max-w-7xl mx-auto my-32 bg-white">
 			<h1 className="text-3xl font-bold text-center mb-16">Frequently Asked Questions</h1>
-			<div className="flex flex-col lg:flex-row lg:gap-4" data-aos="zoom-in-left">
+			<div className="flex flex-col lg:flex-row lg:gap-4" data-aos="fade-up">
 				<div className="w-full lg:w-1/2 order-2 lg:order-1">
 					{faqData.map((faq, index) => (
 						<div key={index} className="mb-4 px-2">

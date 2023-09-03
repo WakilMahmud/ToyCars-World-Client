@@ -16,8 +16,8 @@ const GetInTouchSection = () => {
 	return (
 		<section className="get-in-touch-section py-12 bg-black">
 			<div className="max-w-7xl mx-auto px-4">
-				<div className="flex flex-col md:flex-row items-center justify-between text-white">
-					<div className="md:w-1/2 ">
+				<div className="flex flex-col md:flex-row items-center justify-between">
+					<div className="md:w-1/2  text-white">
 						<h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
 						<p className="mb-6">Have questions or need assistance? Contact us!</p>
 						<p className="text-lg">Email: info@toycarsworld.com</p>

@@ -6,6 +6,8 @@ import Faq from "../Faq/Faq";
 import ToyCarRacingEventsSection from "../ToyCarRacingEvent/ToyCarRacingEventsSection";
 import TestimonialSection from "../TestimonialSection/TestimonialSection";
 import GetInTouchSection from "../GetInTouchSection/GetInTouchSection";
+import Commitment from "../Commitment/Commitment";
+import Subscribe from "../Subscribe/Subscribe";
 
 const Home = () => {
 	return (
@@ -14,10 +16,12 @@ const Home = () => {
 			<Banner></Banner>
 			<Gallery></Gallery>
 			<ShopCategory></ShopCategory>
+			<Commitment></Commitment>
 			<TestimonialSection></TestimonialSection>
 			<ToyCarRacingEventsSection></ToyCarRacingEventsSection>
-			<GetInTouchSection></GetInTouchSection>
 			<Faq></Faq>
+			<GetInTouchSection></GetInTouchSection>
+			<Subscribe></Subscribe>
 		</>
 	);
 };
